@@ -1,10 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Blog.DAL.Model
 {
-    public class Post
+    public class Comment
     {
         [Key]
         public long Id { get; set; }
@@ -12,10 +16,7 @@ namespace Blog.DAL.Model
         [Required]
         public string Content { get; set; }
 
-        [Required]
-        public string Author { get; set; }
-
-        [InverseProperty("Post")]
-        public virtual ICollection<Comment> Comments { get; set; }
+        public long PostId { get; set; }
+        public Post Post { get; set; }
     }
 }
