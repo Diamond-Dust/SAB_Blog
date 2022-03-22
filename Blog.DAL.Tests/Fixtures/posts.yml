@@ -3,3 +3,7 @@
     Id: 1
     Author: test
     Content: test, test, test...
+  test-post3:
+    Id: 3
+    Author: test3
+    Content: test3, test3, test3...
